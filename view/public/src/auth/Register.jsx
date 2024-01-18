@@ -2,6 +2,8 @@ import * as React from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import StarsCanvas from '../components/canvas/Stars';
+import EarthCanvas from '../components/canvas/Earth';
 
 import { auth } from '../fire'; // es el módulo que proporciona funciones y métodos relacionados con la autenticación de usuarios.
 import { createUserWithEmailAndPassword } from 'firebase/auth'//Es una función que pertenece a Firebase Authentication y se utiliza para crear un nuevo usuario mediante el método de correo electrónico y contraseña.
@@ -29,7 +31,7 @@ const [password, setPassword] = React.useState('');
 return (
         <div className="flex w-full h-screen">
         <div className="w-full flex items-center justify-center lg:w-1/2">
-            <div className="bg-white px-10 py-20 rounded-3xl border-2 border-gray-100">
+            <div className="bg-primary px-10 py-20 rounded-3xl border-2 border-gray-100">
                 <h1 className="text-5xl font-semibold">REGISTER</h1>
                 <p className="font-medium text-lg text-gray-500 mt-4">Wlcome back! Please enter your details</p>
                 <div className="mt-8">
@@ -77,10 +79,10 @@ return (
                 </div>
         </div>
     </div>
-    <div className="hidden relative lg:flex h-full w-1/2 items-center justify-center bg-gray-200">
-        <div className="w-60 h-60 bg-gradient-to-tr from-green-500 to-violet-500 rounded-full animate-spin"/>
-        <div className='w-full h-1/2 absolute bottom-0 bg-white/10 backdrop-blur-lg'/>
+    <div className="hidden relative lg:flex h-full w-1/2 items-center justify-center bg-primary">
+    <EarthCanvas/>
     </div>
+    <StarsCanvas/>
 </div>
     )
 }   

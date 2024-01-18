@@ -1,8 +1,9 @@
-import Form from '../components/Form';
 import * as React from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import StarsCanvas from '../components/canvas/Stars';
+import EarthCanvas from '../components/canvas/Earth';
 
 import { signInWithEmailAndPassword} from 'firebase/auth';
 import { auth } from '../fire';
@@ -29,10 +30,12 @@ function Login({
 
     return (
         <div className="flex w-full h-screen">
-            <div className="w-full flex items-center justify-center lg:w-1/2">
-                <div className="bg-white px-10 py-20 rounded-3xl border-2 border-gray-100">
+            
+            <div className="w-full flex items-center justify-center mt-4 lg:w-1/2">
+                
+                <div className="bg-violet-gradient px-10 py-20 rounded-3xl border-2 border-gray-100">
                     <h1 className="text-5xl font-semibold">WELCOME</h1>
-                    <p className="font-medium text-lg text-gray-500 mt-4">Wlcome back! Please enter your details</p>
+                    <p className="font-medium text-lg mt-4">CroqueFeed!</p>
                     <div className="mt-8">
                         <div>
                             <label className="text-lg font-medium">Email</label>
@@ -89,10 +92,10 @@ function Login({
                     </div>
             </div>
         </div>
-        <div className="hidden relative lg:flex h-full w-1/2 items-center justify-center bg-gray-200">
-            <div className="w-60 h-60 bg-gradient-to-tr from-green-500 to-violet-500 rounded-full animate-spin"/>
-            <div className='w-full h-1/2 absolute bottom-0 bg-white/10 backdrop-blur-lg'/>
+        <div className="hidden relative lg:flex h-full w-1/2 items-center justify-center bg-primary">
+        <EarthCanvas/>
         </div>
+        <StarsCanvas/>
     </div>
     );
 }

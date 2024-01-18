@@ -2,6 +2,7 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
 #include <Stepper.h>
+#include <ESP32Servo.h>
 
 int counterConnection = 0;
 bool distanciaEnable = true;
@@ -10,6 +11,14 @@ bool motorEnable = true;
 // Definiciones para el sensor ultrasónico HC-SR04
 const int trigPin = 2;
 const int echoPin = 15;
+
+Servo miServo;
+Servo miServo2; // Segundo servo
+
+const int pinServo = 4; // Pin GPIO al que está conectado el servo
+const int pinServo2 = 5; // Pin GPIO al que está conectado el segundo servo
+//Pin 5 es el que va en la derecha
+//pin 4 es el que va a la izquierda
 
 unsigned long lastReadTime = 0;
 const unsigned long readInterval = 2000; // Lectura de sensores cada 2000 milisegundos (2 segundos)
@@ -23,8 +32,8 @@ float distance;  // Declarar la variable a nivel global
 unsigned long previousMillis = 0;
 const long interval = 1000;  // Actualiza cada 1 segundo
 
-const char* ssid = "TotalplayLH_2.4Gnormal";
-const char* password = "65028912Lg";
+const char* ssid = "TP-Link_BCCE";
+const char* password = "56826449";
 
 WiFiServer server(8080);
 WiFiClient client;
@@ -35,6 +44,8 @@ String request;
 void setup() {
 
   myStepper.setSpeed(12);  // Velocidad del motor en rpm
+  miServo.attach(pinServo);
+  miServo2.attach(pinServo2);
   Serial.begin(9600);
 
 /********************* CONEXIÓN A UNA RED WIFI ***********************/
@@ -47,8 +58,8 @@ void setup() {
   }
 
   if (counterConnection < 10) {
-    IPAddress ip(192,168,100,5);
-    IPAddress gateway(192,168,100,1);
+    IPAddress ip(192,168,0,5);
+    IPAddress gateway(192,168,0,1);
     IPAddress subnet(255,255,255,0);
     WiFi.config(ip, gateway, subnet);
 
@@ -103,10 +114,18 @@ float readDistance() {
 }
 
 int abrirCompuerta() {
-  int stepsToMove = (180.0 / 360.0) * stepsPerRevolution;
-  myStepper.step(stepsToMove);
-  Serial.println("Moviendo el motor en sentido horario");
+  int stepsToMove = (180.0 / 360.0) * stepsPerRevolution; // Gira 180 grados
+  
+  miServo.write(90);  // Mueve el servo a 90 grados
+  miServo2.write(180); // Mueve el servo a 180 grados
+  delay(1000); // Pausa de 1 segundo para esperar que la compuerta se abra
 
+  myStepper.step(-stepsToMove); // Regresa a la posición inicial
+  Serial.println("Regresando el motor a la posición inicial");
+
+  miServo.write(180); // Mueve el servo a 180 grados
+  miServo2.write(90); // Mueve el servo a 180 grados
+  delay(1000);      // Espera 1 segundo
   return stepsToMove;
 }
 
