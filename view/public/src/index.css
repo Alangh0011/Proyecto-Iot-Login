@@ -1,17 +1,22 @@
+/* Importación de la fuente Poppins desde Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* Estilos de Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Estilos generales para el documento */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif; /* Fuente por defecto */
   scroll-behavior: smooth;
   color-scheme: dark;
 }
+
+/* Estilo de borde con gradiente */
 .border-gradient-to-tr {
   border: 2px solid;
   border-image: linear-gradient(45deg, #00FF00, #FF00FF);
@@ -19,6 +24,7 @@
   animation: gradientMove 5s infinite linear;
 }
 
+/* Animación de movimiento de gradiente */
 @keyframes gradientMove {
   0% {
     background-position: 0% 50%;
@@ -31,25 +37,26 @@
   }
 }
 
-
+/* Estilo para ajustar el hash de la página */
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
   display: block;
 }
 
+/* Estilos de gradiente para fondos */
 .black-gradient {
-  background: #000000; /* fallback for old browsers */
+  background: #000000; /* Fallback para navegadores antiguos */
   background: -webkit-linear-gradient(
     to right,
     #434343,
     #000000
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); /* Para Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #434343,
     #000000
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* Estándar W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .violet-gradient {
@@ -68,72 +75,72 @@
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
+/* Estilos de gradiente para texto */
 .orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
+  background: #f12711; /* Fallback para navegadores antiguos */
   background: -webkit-linear-gradient(
     to top,
     #f12711,
     #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); /* Para Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #f12711,
     #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* Estándar W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .green-text-gradient {
-  background: #11998e; /* fallback for old browsers */
+  background: #11998e; /* Fallback para navegadores antiguos */
   background: -webkit-linear-gradient(
     to top,
     #11998e,
     #38ef7d
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); /* Para Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #11998e,
     #38ef7d
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* Estándar W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .blue-text-gradient {
-  /* background: -webkit-linear-gradient(#eee, #333); */
-  background: #56ccf2; /* fallback for old browsers */
+  background: #56ccf2; /* Fallback para navegadores antiguos */
   background: -webkit-linear-gradient(
     to top,
     #2f80ed,
     #56ccf2
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); /* Para Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #2f80ed,
     #56ccf2
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* Estándar W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .pink-text-gradient {
-  background: #ec008c; /* fallback for old browsers */
+  background: #ec008c; /* Fallback para navegadores antiguos */
   background: -webkit-linear-gradient(
     to top,
     #ec008c,
     #fc6767
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); /* Para Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to top,
     #ec008c,
     #fc6767
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); /* Estándar W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* canvas- styles */
+/* Estilos para el loader */
 .canvas-loader {
   font-size: 10px;
   width: 1em;
