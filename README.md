@@ -39,17 +39,22 @@ Inicia la aplicación utilizando el comando:
 ```bash
 npm start
 ```
-Accede a la aplicación en tu navegador utilizando la URL proporcionada por el servidor.
-Uso
-Inicia sesión con tu cuenta de usuario o crea una nueva cuenta si es necesario.
-En la página de inicio, podrás ver el nivel actual de croquetas en el dispensador y controlar el dispensador manualmente.
-Utiliza la opción "Ver cantidad de croquetas" para obtener información detallada sobre la cantidad actual de croquetas.
-Utiliza la opción "Abrir compuerta" para dispensar croquetas manualmente.
-Contribución
+1. Accede a la aplicación en tu navegador utilizando la URL proporcionada por el servidor.
+
+## Uso
+
+1. Accede a la aplicación en tu navegador utilizando la URL proporcionada por el servidor.
+2. Inicia sesión con tu cuenta de usuario o crea una nueva cuenta si es necesario.
+3. En la página de inicio, podrás ver el nivel actual de croquetas en el dispensador y controlar el dispensador manualmente.
+4. Utiliza la opción "Ver cantidad de croquetas" para obtener información detallada sobre la cantidad actual de croquetas.
+5. Utiliza la opción "Abrir compuerta" para dispensar croquetas manualmente.
+
+## Contribución
+
 Si deseas contribuir a este proyecto, sigue estos pasos:
 
-Realiza un fork del repositorio.
-Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
-Realiza tus cambios y haz commit de ellos (git commit -am 'Añade una nueva funcionalidad').
-Sube tus cambios al repositorio (git push origin feature/nueva-funcionalidad).
-Crea un nuevo Pull Request.
+1. Realiza un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3. Realiza tus cambios y haz commit de ellos (`git commit -am 'Añade una nueva funcionalidad'`).
+4. Sube tus cambios al repositorio (`git push origin feature/nueva-funcionalidad`).
+5. Crea un nuevo Pull Request.
