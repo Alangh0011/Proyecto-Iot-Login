@@ -37,8 +37,8 @@ float distance; // Variable global para almacenar la distancia medida
 unsigned long previousMillis = 0;
 const long interval = 1000; // Intervalo para actualización (1 segundo)
 
-const char *ssid = "TotalplayLH_2.4Gnormal";
-const char *password = "65028912Lg";
+const char *ssid = "";//La red donde se conectara
+const char *password = "";//Contraseña de tu red
 
 WiFiServer server(8080);
 WiFiClient client;
@@ -62,16 +62,16 @@ void setup() {
 
   // Si se conecta correctamente, configura la IP y el servidor
   if (counterConnection < 10) {
-    IPAddress ip(192, 168, 100, 5);
-    IPAddress gateway(192, 168, 100, 1);
-    IPAddress subnet(255, 255, 255, 0);
+    IPAddress ip(192, 168, 100, 5);//La ip donde montaras el servidor
+    IPAddress gateway(192, 168, 100, 1);//Gateway de tu red
+    IPAddress subnet(255, 255, 255, 0);//
     WiFi.config(ip, gateway, subnet);
     Serial.println("");
     Serial.println("Conectado al WiFi");
     server.begin();
     Serial.print("API ESP32 desplegado en la ip 'http://");
     Serial.print(WiFi.localIP());
-    Serial.println(":8080'");
+    Serial.println(":8080'");//Puerto
   } else {
     Serial.println("");
   }
