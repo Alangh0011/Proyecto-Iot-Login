@@ -29,12 +29,12 @@ const Modal = ({ isOpen, onClose }) => {
   // Estilos de Tailwind CSS para el modal y la capa de bloqueo
   const modalStyles = `
     fixed inset-0 overflow-y-auto
-    flex items-center justify-center 
+    flex items-center justify-center z-50
     ${isOpen ? 'visible' : 'invisible'}
   `;
 
   const blockingLayerStyles = `
-    fixed inset-0 bg-opacity-50
+  fixed inset-0 bg-black bg-opacity-70 z-40
     ${isOpen ? 'visible' : 'invisible'}
   `;
 
@@ -45,7 +45,7 @@ const Modal = ({ isOpen, onClose }) => {
 
       {/* Contenido del modal */}
       <div className={modalStyles}>
-        <div className="bg-green-600 p-4 rounded shadow-md z-10">
+        <div className="bg-green-600 p-4 rounded shadow-md">
           <p className='text-x1 font-bold'>Espere se esta abriendo la compuerta....</p>
           <p>Cuenta regresiva: {countdown} segundos</p>
         </div>

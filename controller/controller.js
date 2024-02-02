@@ -55,7 +55,7 @@ app.get('/getDistance', async (req, res) => {
     let time = moment().format('YYYY-MM-DD HH:mm:ss'); // Formato de fecha y hora deseado
     console.log(`[${time}] METHOD: GET ${req.path}`);
     try {
-        const response = await axios.get('http://192.168.0.5:8080' + req.path);
+        const response = await axios.get('http://192.168.100.5:8080' + req.path);
         const qualityData = response.data; // Suponiendo que la respuesta contiene los datos de calidad
         time = moment().format('YYYY-MM-DD HH:mm:ss');
         console.log(`[${time}] Distancia: ${qualityData} cm\n`);
@@ -72,7 +72,7 @@ app.get('/getGirar', async (req, res) => {
     let time = moment().format('YYYY-MM-DD HH:mm:ss'); // Formato de fecha y hora deseado
     console.log(`[${time}] METHOD: GET ${req.path}`);
     try {
-        const response = await axios.get('http://192.168.0.5:8080' + req.path); // Cambiar la ruta según tu API local
+        const response = await axios.get('http://192.168.100.5:8080' + req.path); // Cambiar la ruta según tu API local
         const compData = response.data; // Suponiendo que la respuesta contiene los datos de temperatura
         time = moment().format('YYYY-MM-DD HH:mm:ss');
         console.log(`[${time}] Compuerta abierta: ${compData}\n`);
